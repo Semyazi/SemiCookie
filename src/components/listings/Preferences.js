@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { useDispatch } from "react-redux/lib/hooks/useDispatch";
+import { resetAscensions } from "../../redux/userData/ascensions";
 import { resetPreferences } from "../../redux/userData/preferences";
 import { ListingSection, Button, Checkbox } from "../Menu";
 
@@ -12,6 +13,9 @@ export default function Preferences() {
 				<Checkbox name="autoClickCookie">Auto Click Cookie</Checkbox>
 				<Button onClick={() => dispatch(resetPreferences())}>
 					Reset Preferences to Default
+				</Button>
+				<Button onClick={() => dispatch(resetAscensions())}>
+					Reset Ascensions to Default
 				</Button>
 			</ListingSection>
 
