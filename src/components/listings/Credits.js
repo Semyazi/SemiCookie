@@ -9,8 +9,8 @@ export default function Credits() {
 
 	return (
 		<div>
-			{credits.map(([topic, author]) => (
-				<p>
+			{credits.map(([topic, author], index) => (
+				<p key={index}>
 					{topic} — {author}
 				</p>
 			))}
