@@ -1,3 +1,3 @@
 # SemiCookie
 
-A Cookie Clicker utility extension.
+A Cookie Clicker utility mod.
