@@ -1,7 +1,7 @@
 {
     "name": "semicookie",
     "version": "1.0.0-alpha",
-    "description": "A utility Cookie Clicker extension",
+    "description": "A Cookie Clicker utility extension",
     "main": "./src/SemiCookie.js",
     "author": "Evan Simanovskis",
     "license": "MIT",
