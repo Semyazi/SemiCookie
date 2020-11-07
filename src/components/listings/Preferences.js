@@ -33,7 +33,9 @@ export default function Preferences() {
 				<Checkbox name="autoBuyUpgrades">
 					Auto Buy Upgrades (Prioritize low Return on Investment)
 				</Checkbox>
-				<Checkbox name="autoBuyBuildings">Auto Buy Green Buildings</Checkbox>
+				<Checkbox name="autoBuyBuildings">
+					Auto Buy Buildings (Only green highlighted buildings)
+				</Checkbox>
 			</ListingSection>
 		</Fragment>
 	);
