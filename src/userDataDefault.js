@@ -2,7 +2,7 @@ const M = 10 ** 6;
 const B = 10 ** 9;
 
 export default {
-	version: "1.0.0-alpha",
+	version: "1.0.0",
 	ascensions: [
 		{ hc: 440 },
 		{ hc: 2887 },
