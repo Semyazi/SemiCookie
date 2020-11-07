@@ -7,6 +7,15 @@ export default function About() {
 	return (
 		<div>
 			<p>Version: {version}</p>
+			<p>
+				If you find any bugs or problems, please make an issue on SemiCookie's
+				GitHub page.
+			</p>
+			<p>
+				<a href="https://github.com/b1bagx55/SemiCookie" target="_blank">
+					https://github.com/b1bagx55/SemiCookie
+				</a>
+			</p>
 		</div>
 	);
 }
