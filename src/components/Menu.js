@@ -28,9 +28,11 @@ export function ListingSection({ title, children }) {
 
 export function Button({ onClick, children }) {
 	return (
-		<a className="option" onClick={onClick}>
-			{children}
-		</a>
+		<div>
+			<a className="option" onClick={onClick}>
+				{children}
+			</a>
+		</div>
 	);
 }
 
