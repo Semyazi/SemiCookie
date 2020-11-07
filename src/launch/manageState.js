@@ -70,9 +70,13 @@
 import { resetState } from "../redux/reducer";
 import userDataDefault from "../userDataDefault";
 
+const { version } = userDataDefault;
+
 const migrate = (userData) => {
 	switch (userData.version) {
 		case "1.0.0-alpha":
+			userData.version = version;
+
 			return userData;
 
 		case "1.0.0":
