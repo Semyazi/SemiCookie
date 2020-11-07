@@ -3,8 +3,13 @@ import { getHeavenlyChipsToGet, getHeavenlyChipsTarget } from "../helpers";
 export default () => {
 	const changeAscendNumber = () => {
 		const {
-			ascensionData: { extraPrestige },
+			ascensionData: { currentAscension, extraPrestige },
+			userData: { ascensions },
 		} = SemiCookie.state;
+
+		if (currentAscension >= ascensions.length) {
+			return;
+		}
 
 		const prestige = extraPrestige + getHeavenlyChipsToGet();
 		const target = getHeavenlyChipsTarget(0);
@@ -16,8 +21,14 @@ export default () => {
 
 	const changeAscendMeter = () => {
 		const {
-			ascensionData: { extraPrestige },
+			ascensionData: { currentAscension, extraPrestige },
+			userData: { ascensions },
 		} = SemiCookie.state;
+
+		if (currentAscension >= ascensions.length) {
+			return;
+		}
+
 		const prestige = extraPrestige + getHeavenlyChipsToGet();
 		const target = getHeavenlyChipsTarget(0);
 		const percent = (prestige / target) * 100;
