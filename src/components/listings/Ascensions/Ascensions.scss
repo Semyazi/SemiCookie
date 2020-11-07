@@ -1,0 +1,19 @@
+.ascensions {
+    width: 100%;
+    text-align: left;
+    margin-left: 1rem;
+
+    thead {
+        tr {
+            padding-bottom: 0.9rem;
+
+            td {
+                font-weight: bold;
+            }
+        }
+
+        tr td:nth-child(5) {
+            cursor: pointer;
+        }
+    }
+}

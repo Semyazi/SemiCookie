@@ -1,0 +1,35 @@
+{
+    "name": "semicookie",
+    "version": "1.0.0-alpha",
+    "description": "A utility Cookie Clicker extension",
+    "main": "./src/SemiCookie.js",
+    "author": "Evan Simanovskis",
+    "license": "MIT",
+    "scripts": {
+        "dev": "webpack --mode development",
+        "build": "webpack --mode production"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.1",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/preset-env": "^7.11.0",
+        "@babel/preset-react": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^4.2.2",
+        "prettier": "^2.1.2",
+        "sass": "^1.26.10",
+        "sass-loader": "^10.0.1",
+        "style-loader": "^1.2.1",
+        "terser-webpack-plugin": "^4.0.0",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.4.0",
+        "classnames": "^2.2.6",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-redux": "^7.2.2",
+        "redux-watch": "^1.2.0"
+    }
+}
