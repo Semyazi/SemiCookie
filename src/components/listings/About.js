@@ -9,7 +9,7 @@ export default function About() {
 			<p>Version: {version}</p>
 			<p>
 				If you find any bugs or problems, please make an issue on SemiCookie's
-				GitHub page.
+				GitHub repository.
 			</p>
 			<p>
 				<a href="https://github.com/b1bagx55/SemiCookie" target="_blank">
