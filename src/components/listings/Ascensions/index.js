@@ -4,7 +4,12 @@ import Ascension from "./Ascension";
 import { getHeavenlyChips } from "../../../helpers";
 import { useSelector } from "react-redux/lib/hooks/useSelector";
 import { useDispatch } from "react-redux/lib/hooks/useDispatch";
-import { addAscension } from "../../../redux/userData/ascensions";
+import {
+	addAscension,
+	resetAscensions,
+} from "../../../redux/userData/ascensions";
+import { Fragment } from "react/cjs/react.production.min";
+import { Button } from "../../Menu";
 
 /*
 export default class Ascensions extends Component {
@@ -85,27 +90,32 @@ export default function Ascensions() {
 	};
 
 	return (
-		<table className="ascensions">
-			<thead>
-				<tr>
-					<td>Ascension Number</td>
-					<td>Heavenly Chips</td>
-					<td>Edit</td>
-					<td>Delete</td>
-					<td onClick={addAscensionCallback}>➕</td>
-				</tr>
-			</thead>
+		<Fragment>
+			<table className="ascensions">
+				<thead>
+					<tr>
+						<td>Ascension Number</td>
+						<td>Heavenly Chips</td>
+						<td>Edit</td>
+						<td>Delete</td>
+						<td onClick={addAscensionCallback}>➕</td>
+					</tr>
+				</thead>
 
-			<tbody>
-				{ascensions.map((_, index) => (
-					<Ascension
-						active={currentAscension === index}
-						last={index + 1 === ascensions.length}
-						index={index}
-						key={index}
-					/>
-				))}
-			</tbody>
-		</table>
+				<tbody>
+					{ascensions.map((_, index) => (
+						<Ascension
+							active={currentAscension === index}
+							last={index + 1 === ascensions.length}
+							index={index}
+							key={index}
+						/>
+					))}
+				</tbody>
+			</table>
+			<Button onClick={dispatch(resetAscensions())}>
+				Reset Ascensions to Default
+			</Button>
+		</Fragment>
 	);
 }

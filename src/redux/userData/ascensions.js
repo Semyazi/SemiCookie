@@ -7,6 +7,7 @@ const initialState = userDataDefault.ascensions;
 export const addAscension = createAction("ascensions/add");
 export const editAscension = createAction("ascensions/edit");
 export const deleteAscension = createAction("ascensions/delete");
+export const resetAscensions = createAction("ascensions/reset");
 
 export default createReducer(initialState, (builder) => {
 	builder
@@ -20,5 +21,6 @@ export default createReducer(initialState, (builder) => {
 		})
 		.addCase(deleteAscension, (state, action) => {
 			state.splice(action.payload, 1);
-		});
+		})
+		.addCase(resetAscensions, () => initialState);
 });
