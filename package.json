@@ -1,6 +1,5 @@
 {
     "name": "semicookie",
-    "version": "1.0.0-alpha",
     "description": "A Cookie Clicker utility mod",
     "main": "./src/SemiCookie.js",
     "author": "Evan Simanovskis",
