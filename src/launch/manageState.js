@@ -79,7 +79,9 @@ const migrate = (userData) => {
 			return userData;
 
 		default:
-			console.error("Couldn't restore saved data for SemiCookie.");
+			console.error(
+				"Couldn't restore saved data for SemiCookie, loading defaults."
+			);
 
 			return userDataDefault;
 	}
