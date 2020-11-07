@@ -113,7 +113,7 @@ export default function Ascensions() {
 					))}
 				</tbody>
 			</table>
-			<Button onClick={dispatch(resetAscensions())}>
+			<Button onClick={() => dispatch(resetAscensions())}>
 				Reset Ascensions to Default
 			</Button>
 		</Fragment>
