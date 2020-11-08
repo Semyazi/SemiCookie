@@ -15,7 +15,9 @@ export default () => {
 
 	// Render it
 	const renderMenu = () => {
-		// Derived from CCSE
+		// Some parts are derived from CCSE
+		if (Game.onMenu !== "prefs") return;
+
 		const menu = document.querySelector("#menu .subsection");
 		if (!menu) return;
 
