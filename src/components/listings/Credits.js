@@ -5,6 +5,7 @@ export default function Credits() {
 		["Default Ascensions", "Finkus"],
 		["Collapsible Menu CSS", "Aktanusa"],
 		["Menu DOM Injection", "Klattmose"],
+		["Function injection code", "Cppkies authors"],
 	];
 
 	return (
