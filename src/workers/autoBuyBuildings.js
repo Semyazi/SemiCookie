@@ -3,6 +3,7 @@ import { CMLoaded } from "../helpers";
 export default () => {
 	setInterval(() => {
 		if (!CMLoaded()) return;
+		if (!CM.Cache.Objects) return;
 
 		const {
 			userData: {
