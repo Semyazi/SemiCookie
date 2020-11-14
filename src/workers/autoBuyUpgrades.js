@@ -5,7 +5,6 @@ export default () => {
 
 	setInterval(() => {
 		if (!CMLoaded() || !CM?.Cache?.Upgrades) return;
-		if (!CM.Cache.Upgrades) return;
 
 		const {
 			userData: {
