@@ -42,7 +42,23 @@ export const getHeavenlyChips = (hc) => {
 
 export const CMLoaded = () => !!window.CM;
 
-export const inject = (value, func) => {
+export const inject = (value, when, func) => {
 	const orig = Game[value];
-	Game[value] = () => func(orig);
+
+	let replacement;
+
+	if (when === "before") {
+		replacement = (...args) => {
+			func(...args);
+			return orig(...args);
+		};
+	} else {
+		const replacement = (...args) => {
+			returnValue = orig(...args);
+			func(...args);
+			return returnValue;
+		};
+	}
+
+	Game[value] = replacement;
 };
