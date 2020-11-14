@@ -19,3 +19,9 @@ export default createReducer(initialState, (builder) => {
 			return state;
 		});
 });
+
+Game.registerHook("reset", (val) => {
+	if (val) {
+		SemiCookie.store.dispatch(resetPreferences());
+	}
+});
