@@ -1,4 +1,4 @@
-export function getHeavenlyChipsToGet() {
+export const getHeavenlyChipsToGet = () => {
 	const chipsOwned = Game.HowMuchPrestige(Game.cookiesReset);
 	const ascendNowToOwn = Math.floor(
 		Game.HowMuchPrestige(Game.cookiesReset + Game.cookiesEarned)
@@ -6,9 +6,9 @@ export function getHeavenlyChipsToGet() {
 	const ascendNowToGet = ascendNowToOwn - Math.floor(chipsOwned);
 
 	return ascendNowToGet;
-}
+};
 
-export function getHeavenlyChipsTarget(defaultHc) {
+export const getHeavenlyChipsTarget = (defaultHc) => {
 	const {
 		userData: { ascensions },
 		ascensionData: { currentAscension },
@@ -23,9 +23,9 @@ export function getHeavenlyChipsTarget(defaultHc) {
 	} else {
 		return defaultHc;
 	}
-}
+};
 
-export function getHeavenlyChips(hc) {
+export const getHeavenlyChips = (hc) => {
 	const value = prompt("How many Heavenly Chips?", hc ? hc : "");
 
 	if (value) {
@@ -38,8 +38,6 @@ export function getHeavenlyChips(hc) {
 	}
 
 	return 0;
-}
+};
 
-export function CMLoaded() {
-	return !!window.CM;
-}
+export const CMLoaded = () => !!window.CM;
