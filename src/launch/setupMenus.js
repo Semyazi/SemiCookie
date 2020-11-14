@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Provider from "react-redux/lib/components/Provider";
 import SemiCookieUI from "../components/SemiCookie";
+import { inject } from "../helpers";
 
 export default () => {
 	// Generate virtual element for React
@@ -31,10 +32,5 @@ export default () => {
 	};
 
 	// Render the menu every time the menu is updated.
-	const UpdateMenu = Game.UpdateMenu;
-
-	Game.UpdateMenu = () => {
-		UpdateMenu();
-		renderMenu();
-	};
+	inject("UpdateMenu", "after", renderMenu);
 };
