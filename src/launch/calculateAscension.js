@@ -1,6 +1,7 @@
 import { setCurrentAscension } from "../redux/ascensionData/currentAscension";
 import { setExtraPrestige } from "../redux/ascensionData/extraPrestige";
 import watch from "redux-watch";
+import { inject } from "../helpers";
 
 export default () => {
 	// Determine which ascension we are on and how much extra prestige we have
@@ -25,6 +26,13 @@ export default () => {
 
 	// Setup hooks to recalculate the ascensionData whenever you reincarnate or change the ascensions.
 	Game.registerHook("reincarnate", SemiCookie.calculateAscension);
+	Game.registerHook("reset", (val) => {
+		if (!val) return;
+
+		SemiCookie.calculateAscension();
+	});
+
+	inject("LoadSave", "after", SemiCookie.calculateAscension);
 
 	const w = watch(SemiCookie.store.getState, "userData.ascensions");
 	SemiCookie.store.subscribe(w(() => SemiCookie.calculateAscension));
