@@ -27,11 +27,10 @@ export default () => {
 	// Setup hooks to recalculate the ascensionData whenever you reincarnate or change the ascensions.
 	Game.registerHook("reincarnate", SemiCookie.calculateAscension);
 	Game.registerHook("reset", (val) => {
-		if (!val) return;
-
-		SemiCookie.calculateAscension();
+		if (val) {
+			Promise.resolve().then(SemiCookie.calculateAscension);
+		}
 	});
-
 	inject("LoadSave", "after", SemiCookie.calculateAscension);
 
 	const w = watch(SemiCookie.store.getState, "userData.ascensions");
