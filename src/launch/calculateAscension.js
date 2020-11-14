@@ -24,7 +24,7 @@ export default () => {
 		dispatch(setExtraPrestige(prestige));
 	};
 
-	// Setup hooks to recalculate the ascensionData whenever you reincarnate or change the ascensions.
+	// Setup hooks to recalculate the ascensionData
 	Game.registerHook("reincarnate", SemiCookie.calculateAscension);
 	Game.registerHook("reset", (val) => {
 		if (val) {
