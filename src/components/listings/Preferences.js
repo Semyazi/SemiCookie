@@ -40,6 +40,8 @@ export default function Preferences() {
 				<Checkbox name="autoBuyBuildings">
 					Auto Buy Buildings (Only green highlighted buildings)
 				</Checkbox>
+				<br />
+				<p>Note: These features require Cookie Monster to work.</p>
 			</ListingSection>
 		</Fragment>
 	);
