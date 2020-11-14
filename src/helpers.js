@@ -39,3 +39,7 @@ export function getHeavenlyChips(hc) {
 
 	return 0;
 }
+
+export function CMLoaded() {
+	return !!window.CM;
+}
