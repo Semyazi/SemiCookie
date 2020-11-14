@@ -41,3 +41,8 @@ export const getHeavenlyChips = (hc) => {
 };
 
 export const CMLoaded = () => !!window.CM;
+
+export const inject = (value, func) => {
+	const orig = Game[value];
+	Game[value] = () => func(orig);
+};
