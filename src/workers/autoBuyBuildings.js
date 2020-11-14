@@ -2,8 +2,7 @@ import { CMLoaded } from "../helpers";
 
 export default () => {
 	setInterval(() => {
-		if (!CMLoaded()) return;
-		if (!CM.Cache.Objects) return;
+		if (!CMLoaded() || !CM?.Cache?.Objects) return;
 
 		const {
 			userData: {

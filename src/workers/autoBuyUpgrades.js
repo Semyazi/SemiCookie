@@ -4,7 +4,7 @@ export default () => {
 	const MAX_UPGRADE_TIME = 5 * 60;
 
 	setInterval(() => {
-		if (!CMLoaded()) return;
+		if (!CMLoaded() || !CM?.Cache?.Upgrades) return;
 		if (!CM.Cache.Upgrades) return;
 
 		const {
