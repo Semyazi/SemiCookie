@@ -7,6 +7,7 @@ import { inject } from "../helpers";
 export default () => {
 	// Generate virtual element for React
 	const virtualElement = document.createElement("div");
+
 	ReactDOM.render(
 		<Provider store={SemiCookie.store}>
 			<SemiCookieUI />
@@ -32,5 +33,5 @@ export default () => {
 	};
 
 	// Render the menu every time the menu is updated.
-	inject("UpdateMenu", "after", renderMenu);
+	inject("UpdateMenu", "after", renderMenu, { virtualElement });
 };

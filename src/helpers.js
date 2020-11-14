@@ -42,23 +42,42 @@ export const getHeavenlyChips = (hc) => {
 
 export const CMLoaded = () => !!window.CM;
 
-export const inject = (value, when, func) => {
-	const orig = Game[value];
+// Inject code from Cppkies
+export const inject = (funcKey, where, targetFunc, context = {}) => {
+	const func = Game[funcKey];
+	let newFuncStr = func.toString();
 
-	let replacement;
+	let target = targetFunc.toString();
+	target = target.slice(target.indexOf("{") + 1, target.lastIndexOf("}"));
 
-	if (when === "before") {
-		replacement = (...args) => {
-			func(...args);
-			return orig(...args);
-		};
-	} else {
-		replacement = (...args) => {
-			const returnValue = orig(...args);
-			func(...args);
-			return returnValue;
-		};
+	const findStart = /(\)[^{]*{)/;
+	const findEnd = /(}?)$/;
+
+	switch (where) {
+		case "before":
+			newFuncStr = newFuncStr.replace(findStart, `$1${target}`);
+
+			break;
+
+		case "after":
+			newFuncStr = newFuncStr.replace(findEnd, `${target}$1`);
+
+			break;
 	}
 
-	Game[value] = replacement;
+	let contextStr = "";
+
+	for (const i in context) {
+		contextStr += `var ${i} = globalThis.tempCtx.${i}\n`;
+	}
+
+	globalThis.tempCtx = context;
+
+	const newFunc = new Function(
+		`${contextStr}globalThis.tempCtx = null\nreturn (${newFuncStr})`
+	)();
+
+	newFunc.prototype = func.prototype;
+
+	Game[funcKey] = newFunc;
 };
