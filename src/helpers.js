@@ -53,7 +53,7 @@ export const inject = (value, when, func) => {
 			return orig(...args);
 		};
 	} else {
-		const replacement = (...args) => {
+		replacement = (...args) => {
 			returnValue = orig(...args);
 			func(...args);
 			return returnValue;
