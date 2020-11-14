@@ -21,10 +21,5 @@ SemiCookie.init = () => {
 
 window.SemiCookie = SemiCookie;
 
-// Requirement
-if (!window.CM) {
-	Game.LoadMod("https://aktanusa.github.io/CookieMonster/CookieMonster.js");
-}
-
 // Register mod
 Game.registerMod("SemiCookie", SemiCookie);
