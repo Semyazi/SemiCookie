@@ -35,7 +35,7 @@ export default function Preferences() {
 
 			<ListingSection title="Cookie Monster Integration">
 				<Checkbox name="autoBuyUpgrades">
-					Auto Buy Upgrades (Prioritize low Return on Investment)
+					Auto Buy Upgrades (Prioritize low return on investment)
 				</Checkbox>
 				<Checkbox name="autoBuyBuildings">
 					Auto Buy Buildings (Only green highlighted buildings)
