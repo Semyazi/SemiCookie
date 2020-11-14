@@ -5,7 +5,7 @@ export default function Credits() {
 		["Default Ascensions", "Finkus"],
 		["Collapsible Menu CSS", "Aktanusa"],
 		["Menu DOM Injection", "Klattmose"],
-		["Function injection code", "TheGLander (ʐ̈ MANNNNNNN#2006)"],
+		["Function Injection Code", "TheGLander (ʐ̈ MANNNNNNN#2006)"],
 	];
 
 	return (
