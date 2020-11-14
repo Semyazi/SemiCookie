@@ -1,5 +1,9 @@
+import { CMLoaded } from "../helpers";
+
 export default () => {
 	setInterval(() => {
+		if (!CMLoaded()) return;
+
 		const {
 			userData: {
 				preferences: { autoBuyBuildings },

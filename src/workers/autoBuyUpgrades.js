@@ -1,7 +1,11 @@
+import { CMLoaded } from "../helpers";
+
 export default () => {
 	const MAX_UPGRADE_TIME = 5 * 60;
 
 	setInterval(() => {
+		if (!CMLoaded()) return;
+
 		const {
 			userData: {
 				preferences: { autoBuyUpgrades },
