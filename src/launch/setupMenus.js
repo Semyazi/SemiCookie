@@ -25,12 +25,10 @@ export default () => {
 
 		const padding = menu.querySelector("div:last-child");
 
-		const { virtualElement } = SemiCookie;
-
 		if (padding) {
-			menu.insertBefore(virtualElement, padding);
+			menu.insertBefore(SemiCookie.virtualElement, padding);
 		} else {
-			menu.appendChild(virtualElement);
+			menu.appendChild(SemiCookie.virtualElement);
 		}
 	};
 
