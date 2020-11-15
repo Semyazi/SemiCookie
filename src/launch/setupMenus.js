@@ -6,13 +6,13 @@ import { inject } from "../helpers";
 
 export default () => {
 	// Generate virtual element for React
-	const virtualElement = document.createElement("div");
+	SemiCookie.virtualElement = document.createElement("div");
 
 	ReactDOM.render(
 		<Provider store={SemiCookie.store}>
 			<SemiCookieUI />
 		</Provider>,
-		virtualElement
+		SemiCookie.virtualElement
 	);
 
 	// Render it
@@ -25,6 +25,8 @@ export default () => {
 
 		const padding = menu.querySelector("div:last-child");
 
+		const { virtualElement } = SemiCookie;
+
 		if (padding) {
 			menu.insertBefore(virtualElement, padding);
 		} else {
@@ -33,5 +35,5 @@ export default () => {
 	};
 
 	// Render the menu every time the menu is updated.
-	inject("UpdateMenu", "after", renderMenu, { virtualElement });
+	inject("UpdateMenu", "after", renderMenu);
 };
